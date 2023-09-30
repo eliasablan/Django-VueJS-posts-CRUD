@@ -59,7 +59,7 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static_in_env')]
+STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
 
 STATICFILES_FINDERS = (
     'django.contrib.staticfiles.finders.FileSystemFinder',
@@ -74,6 +74,11 @@ MEDIA_URL = '/media/'
 
 MEDIA_ROOT = os.path.join(VENV_PATH, 'media')
 
-CORS_ORIGIN_WHITELIST = (
-    'localhost:8080',
-)
+CORS_ORIGIN_WHITELIST = [
+    'https://localhost:8080',
+    'https://example.com',
+]
+
+# Default primary key field type
+
+DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
